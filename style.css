@@ -1,0 +1,393 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#fff0f5,#ffe4ec);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+.page{
+    display:none;
+    min-height:100vh;
+    padding:40px;
+    text-align:center;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.page.active{
+    display:flex;
+}
+
+h1{
+    color:#ff5e8a;
+    margin-bottom:20px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    max-width:700px;
+    width:90%;
+}
+
+.pin-display{
+    font-size:20px;
+    letter-spacing:8px;
+    margin:20px 0;
+}
+
+.keypad{
+    display:grid;
+    grid-template-columns:repeat(3,70px);
+    gap:15px;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.keypad button{
+    width:70px;
+    height:70px;
+    border:none;
+    border-radius:50%;
+    background:#ff6b96;
+    color:white;
+    font-size:20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.polaroid {
+    width: 220px;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.polaroid:nth-child(odd) {
+    animation: gerakKiri 4s ease-in-out infinite alternate;
+}
+
+.polaroid:nth-child(even) {
+    animation: gerakKanan 4s ease-in-out infinite alternate;
+}
+
+@keyframes gerakKiri {
+    0% {
+        transform: translateY(0) rotate(-3deg);
+    }
+    100% {
+        transform: translateY(-10px) rotate(-1deg);
+    }
+}
+
+@keyframes gerakKanan {
+    0% {
+        transform: translateY(0) rotate(3deg);
+    }
+    100% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+.polaroid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.polaroid p {
+    margin-top: 10px;
+}
+
+.flower{
+    width:180px;
+    cursor:pointer;
+    animation:bloom 2s infinite ease-in-out;
+}
+
+.flower-text{
+    margin-top:20px;
+    color:#777;
+}
+
+@keyframes bloom{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+.couple-polaroids {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 25px; 
+    margin-top: 20px;
+}
+
+.polaroid-card {
+    width: 280px; 
+    background: #fff;
+    padding: 12px; 
+    border-radius: 15px; 
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.08), 
+        0 4px 10px rgba(255, 107, 150, 0.05); 
+    border: 1px solid rgba(255, 107, 150, 0.1); 
+    transition: all 0.4s ease; 
+}
+
+.polaroid-card img {
+    width: 100%;
+    height: 190px; 
+    object-fit: cover;
+    border-radius: 10px; 
+    border: 1px solid rgba(0,0,0,0.05); 
+}
+
+.story-text {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #ff5e8a; 
+    font-size: 20px;
+    font-family: 'Brush Script MT', 'Dancing Script', cursive; 
+    font-weight: 500;
+}
+
+.polaroid-card {
+    width: 280px;
+    background: #fff;
+    padding: 12px;
+    border-radius: 15px;
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.08),
+        0 4px 10px rgba(255, 107, 150, 0.05);
+    border: 1px solid rgba(255, 107, 150, 0.1);
+}
+
+.polaroid-card:nth-child(1) {
+    animation: gerakPolaroidKiri 4s ease-in-out infinite alternate;
+}
+
+.polaroid-card:nth-child(2) {
+    animation: gerakPolaroidKanan 4s ease-in-out infinite alternate;
+}
+
+@keyframes gerakPolaroidKiri {
+    0% {
+        transform: translateY(0) rotate(-3deg);
+    }
+    100% {
+        transform: translateY(-10px) rotate(-1deg);
+    }
+}
+
+@keyframes gerakPolaroidKanan {
+    0% {
+        transform: translateY(0) rotate(3deg);
+    }
+    100% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+
+.reason-box{
+    background:transparent;
+    box-shadow: none;
+    padding:30px;
+    border-radius:20px;
+    max-width:600px;
+    margin:10px auto;
+    font-size:20px;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 24px;
+    border:none;
+    border-radius:12px;
+    background:#ff5e8a;
+    color:white;
+    cursor:pointer;
+}
+
+.letter{
+    background:#fffdf8;
+    width:95%;
+    max-width:800px;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    text-align:left;
+    line-height:1.9;
+    font-size:16px;
+}
+
+#typedText{
+    white-space:pre-wrap;
+    word-break:break-word;
+    line-height:1.9;
+}
+
+.card-ending {
+    background: rgba(255, 255, 255, 0.65); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(255, 107, 150, 0.15);
+    max-width: 500px;
+    width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* =========================================
+   STYLE & ANIMASI KHUSUS PAGE 7 (ENDING)
+   ========================================= */
+
+/* Efek Kalimat Thank You Muncul Satu per Satu */
+#page7 .fade-line {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 1s ease, transform 1s ease;
+    margin: 15px 0;
+}
+
+#page7 .fade-line.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animasi Blok Thank You Menghilang Sekaligus */
+#thank-you-section.fade-out {
+    animation: lenyapTeks 1.5s forwards;
+}
+
+@keyframes lenyapTeks {
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+/* Animasi Happy Mensiversary Muncul Lembut */
+#happy-mensive-section h1.fade-in {
+    animation: munculMensive 1.5s forwards;
+}
+
+@keyframes munculMensive {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* CSS Hujan Bunga Otomatis */
+.floating-flower {
+    position: fixed;
+    top: -50px; /* Mulai dari atas luar layar */
+    pointer-events: none;
+    z-index: 9999;
+    animation: flowerFall 4s linear forwards;
+    opacity: 0.8;
+}
+
+@keyframes flowerFall {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(110vh) translateX(var(--randomX)) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+#error{
+    color:#ff5e8a;
+    margin-top:15px;
+}
+
+@media(max-width:768px){
+    h1 {
+        font-size:2rem;
+    }
+
+    .page {
+        padding:20px;
+    }
+
+    .polaroid img {
+        height: 250px; 
+    }
+
+    .reason-box {
+        font-size:20px;
+        padding:20px;
+    }
+
+    .letter {
+        padding:20px;
+        font-size:15px;
+    }
+}
+
+#curtain-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100000; /* Taruh di paling depan layar */
+    display: flex;
+    pointer-events: none; /* Biar tombol di belakangnya tetep bisa diklik saat kebuka */
+}
+
+/* Sisi Tirai Kiri dan Kanan */
+.curtain-left, .curtain-right {
+    width: 50%;
+    height: 100%;
+    background: #ffb6c1; /* Warna pink tema mensive kamu, bisa diganti warna lain */
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.05);
+}
+
+/* Kondisi Awal: Tirai dalam keadaan TERBUKA (ngumpet di luar layar) */
+.curtain-left { transform: translateX(-100%); }
+.curtain-right { transform: translateX(100%); }
+
+/* Ketika class .active dipasang: Tirai NUDUH/MENUTUP ke tengah */
+#curtain-transition.active .curtain-left { transform: translateX(0); }
+#curtain-transition.active .curtain-right { transform: translateX(0); }
